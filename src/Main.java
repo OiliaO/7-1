@@ -5,14 +5,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         SmartHomeSystem system = new SmartHomeSystem();
 
-        int q = Integer.parseInt(scanner.nextLine());
+        int q = scanner.nextInt();
+        scanner.nextLine();
         for (int i = 0; i < q; i++) {
             String line = scanner.nextLine();
             String[] parts = line.split(" ");
-            String command = parts[0];
+
 
             try {
-                switch (command) {
+                switch (parts[0]) {
                     case "add_device":
                         system.addDevice(parts[1], parts[2], parts[3]);
                         break;
